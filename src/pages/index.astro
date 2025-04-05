@@ -1,0 +1,73 @@
+---
+import MainLayout from "@layouts/MainLayout/MainLayout.astro";
+import MainHeader from "@components/MainHeader/MainHeader.astro";
+import MainHero from "@components/MainHero/MainHero.astro";
+import ExperienceSection from "@components/sections/ExperienceSection/ExperienceSection.astro";
+import ProjectsSection from "@components/sections/ProjectsSection/ProjectsSection.astro";
+import SkillsSection from "@components/sections/SkillsSection/SkillsSection.astro";
+import MeSection from "@components/sections/MeSection/MeSection.astro";
+import ContactSection from "@components/sections/ContactSection/ContactSection.astro";
+---
+
+<style>
+	main {
+		position: relative;
+
+		& .background-gradient {
+			z-index: -2;
+			position: fixed;
+			top: 0;
+			height: 100dvh;
+			left: 0;
+			right: 0;
+			background-image: linear-gradient(var(--primary_color-dark-2), var(--primary_color-dark-1));
+		}
+
+		& h2.title-section {
+			font-size: 4rem;
+			font-style: italic;
+			font-variation-settings:
+				"wght" 800,
+				"wdth" 62.5;
+			letter-spacing: 5px;
+			text-transform: lowercase;
+			text-shadow: 0 0 4px var(--text_color_white);
+			-ms-user-select: none;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			user-select: none;
+
+			@media (max-width: 425px) {
+				font-size: 3rem;
+			}
+		}
+
+		& .max-width {
+			display: flex;
+			flex-direction: column;
+			gap: 5dvh;
+		}
+	}
+</style>
+
+<MainLayout>
+	<MainHeader />
+
+	<main>
+		<div class="background-gradient"></div>
+		<div class="max-width">
+			<MainHero />
+
+			<ExperienceSection />
+
+			<!-- TODO -->
+			<ProjectsSection />
+
+			<SkillsSection />
+
+			<MeSection />
+
+			<ContactSection />
+		</div>
+	</main>
+</MainLayout>

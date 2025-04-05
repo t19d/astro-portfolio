@@ -1,0 +1,50 @@
+---
+interface Props {
+	title?: string;
+	baseUrl?: string;
+}
+
+const { title = "David Tojo", baseUrl = "https://t19d.github.io" } = Astro.props;
+---
+
+<style is:global>
+	@import "@styles/buttons.css";
+	@import "@styles/colors.css";
+	@import "@styles/fonts.css";
+	@import "@styles/links.css";
+	@import "@styles/resets.css";
+
+	@import "./MainLayout.css";
+</style>
+
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content="Portfolio de David Tojo." />
+		<!-- Facebook -->
+		<meta property="og:url" content={baseUrl} />
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content="David Tojo" />
+		<meta property="og:description" content="Portfolio de David Tojo." />
+		<meta property="og:site_name" content="David Tojo" />
+		<meta property="og:image" content=`${baseUrl}/assets/img/me.png` />
+		<!-- Twitter -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content="David Tojo" />
+		<meta name="twitter:description" content="Portfolio de David Tojo." />
+		<meta name="twitter:url" content={baseUrl} />
+		<meta name="twitter:image" content=`${baseUrl}/assets/img/me.png` />
+
+		<link rel="canonical" href={baseUrl} />
+		<title>{title}</title>
+		<link rel="image_src" href=`${baseUrl}/assets/img/me.png` />
+		<link rel="icon" type="image/png" href=`${baseUrl}/assets/img/me.png` sizes="64x64" />
+		<link rel="stylesheet" href="style/resets.css" />
+		<link rel="stylesheet" href="style/index.css" />
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
