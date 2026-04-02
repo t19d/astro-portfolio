@@ -15,8 +15,8 @@
 
 	/* TEXT */
 	--text-primary: #ffffff;
-	--text-secondary: #a0a0b8;
-	--text-muted: #6b6b80;
+	--text-secondary: #d4d4d8; /* Increased lightness for AAA contrast */
+	--text-muted: #a1a1aa; /* Increased lightness for AAA contrast */
 
 	/* BORDERS */
 	--border-subtle: rgba(255, 255, 255, 0.06);
