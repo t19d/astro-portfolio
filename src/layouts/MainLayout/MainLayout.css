@@ -1,21 +1,25 @@
 :root {
-	--page-space: 20px;
+	--page-space: 24px;
+	--max-width: 1200px;
 }
 
 html {
-	font-family: "NotoSans", "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+	font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 	scroll-behavior: smooth;
 	scroll-padding-top: 90px;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 
 	& ::selection {
-		background-color: var(--secondary_color_1-light-1);
+		background-color: rgba(0, 212, 255, 0.3);
+		color: var(--text-primary);
 	}
 
 	& body {
 		margin: 0;
 		min-height: 100dvh;
-		background-color: var(--primary_color-dark-1);
-		color: var(--text_color_white);
+		background-color: var(--bg-primary);
+		color: var(--text-primary);
 
 		& img {
 			pointer-events: none;
@@ -33,18 +37,29 @@ html {
 		}
 
 		& .max-width {
-			max-width: 1280px;
+			max-width: var(--max-width);
 			padding-inline: var(--page-space);
 			margin: auto;
 		}
 
-		& .underline {
-			text-decoration: underline;
+		& .accent {
+			color: var(--accent-primary);
+			font-weight: 600;
 		}
 
-		& .yellow {
-			color: var(--complementary_color-light-1);
-			font-weight: bold;
+		& .gradient-text {
+			background: var(--accent-gradient);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			background-clip: text;
+		}
+
+		& .glass-card {
+			background: var(--glass-bg);
+			backdrop-filter: blur(var(--glass-blur));
+			-webkit-backdrop-filter: blur(var(--glass-blur));
+			border: 1px solid var(--glass-border);
+			border-radius: 16px;
 		}
 	}
 }

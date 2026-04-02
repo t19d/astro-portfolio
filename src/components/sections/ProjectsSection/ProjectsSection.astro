@@ -1,5 +1,59 @@
 ---
 import "./ProjectsSection.css";
+
+const projects = [
+	{
+		title: "Portfolio Personal",
+		description: "Este mismo portfolio, desarrollado con Astro y desplegado en Vercel. Diseño minimalista con glassmorphism y animaciones.",
+		tags: ["Astro", "CSS", "Vercel"],
+		link: "https://github.com/t19d/astro-portfolio",
+	},
+	{
+		title: "Buscador de Películas",
+		description: "Aplicación web para buscar películas usando la API de TMDB. Interfaz intuitiva con filtros y detalles de cada película.",
+		tags: ["React", "API REST", "CSS"],
+		link: "https://github.com/t19d",
+	},
+	{
+		title: "Proyectos Open Source",
+		description: "Contribuciones y proyectos personales disponibles en mi perfil de GitHub. Variedad de tecnologías y enfoques.",
+		tags: ["TypeScript", "Python", "Node.js"],
+		link: "https://github.com/t19d",
+	},
+];
 ---
 
-<!-- TODO -->
+<section id="projects">
+	<header class="reveal">
+		<span class="section-tag">Trabajo reciente</span>
+		<h2 class="title-section">Proyectos</h2>
+	</header>
+
+	<div class="projects-grid">
+		{projects.map((project, index) => (
+			<a
+				href={project.link}
+				target="_blank"
+				rel="noopener"
+				class={`project-card glass-card reveal reveal-delay-${index + 1}`}
+				aria-label={`Ver proyecto: ${project.title}`}
+			>
+				<div class="project-content">
+					<div class="project-header">
+						<h3>{project.title}</h3>
+						<svg class="arrow-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+							<path d="M7 17L17 7" />
+							<path d="M7 7h10v10" />
+						</svg>
+					</div>
+					<p>{project.description}</p>
+					<ul class="tags">
+						{project.tags.map((tag) => (
+							<li>{tag}</li>
+						))}
+					</ul>
+				</div>
+			</a>
+		))}
+	</div>
+</section>

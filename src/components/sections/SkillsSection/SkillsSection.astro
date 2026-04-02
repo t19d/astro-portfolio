@@ -1,159 +1,78 @@
 ---
 import "./SkillsSection.css";
+
+const skillGroups = [
+	{
+		title: "Frontend",
+		skills: [
+			{ icon: "angular.svg", name: "Angular" },
+			{ icon: "react.svg", name: "React" },
+			{ icon: "next.svg", name: "Next.js", invert: true },
+			{ icon: "astro.svg", name: "Astro", invert: true },
+			{ icon: "typescript.svg", name: "TypeScript" },
+			{ icon: "js.svg", name: "JavaScript" },
+			{ icon: "html-5.svg", name: "HTML5" },
+			{ icon: "css-3.svg", name: "CSS3" },
+			{ icon: "sass.svg", name: "Sass" },
+			{ icon: "ionic.svg", name: "Ionic" },
+		],
+	},
+	{
+		title: "Backend",
+		skills: [
+			{ icon: "node.svg", name: "Node.js" },
+			{ icon: "express.svg", name: "Express.js", invert: true },
+			{ icon: "spring.svg", name: "Spring" },
+			{ icon: "java.svg", name: "Java" },
+			{ icon: "python.svg", name: "Python" },
+			{ icon: "flask.svg", name: "Flask", invert: true },
+			{ icon: "php.svg", name: "PHP" },
+		],
+	},
+	{
+		title: "Herramientas & Otros",
+		skills: [
+			{ icon: "git.svg", name: "Git" },
+			{ icon: "github-icon.svg", name: "GitHub", invert: true },
+			{ icon: "docker.svg", name: "Docker" },
+			{ icon: "figma.svg", name: "Figma" },
+			{ icon: "mongo.svg", name: "MongoDB" },
+			{ icon: "mysql.svg", name: "MySQL" },
+			{ icon: "mariadb.svg", name: "MariaDB" },
+			{ icon: "linux-tux.svg", name: "Linux" },
+			{ icon: "vs-code.svg", name: "VSCode" },
+			{ icon: "wordpress.svg", name: "WordPress" },
+			{ icon: "prestashop.svg", name: "PrestaShop" },
+			{ icon: "stripe.svg", name: "Stripe" },
+			{ icon: "unity.svg", name: "Unity", invert: true },
+			{ icon: "android.svg", name: "Android" },
+		],
+	},
+];
 ---
 
-<!-- TODO: Extract cards to a component -->
-
 <section id="skills">
-	<header>
+	<header class="reveal">
+		<span class="section-tag">Stack tecnológico</span>
 		<h2 class="title-section">Habilidades</h2>
 	</header>
 
 	<div class="technologies">
-		<article class="card">
-			<h3 class="no-text-select">Frontend</h3>
+		{skillGroups.map((group, gIndex) => (
+			<article class={`skill-group glass-card reveal reveal-delay-${gIndex + 1}`}>
+				<h3>{group.title}</h3>
 
-			<ul>
-				<li>
-					<img src="assets/icons/angular.svg" alt="Angular" />
-					<span class="tooltip">Angular</span>
-				</li>
-				<li>
-					<img src="assets/icons/astro.svg" alt="Astro" />
-					<span class="tooltip">Astro</span>
-				</li>
-				<li>
-					<img src="assets/icons/css-3.svg" alt="CSS" />
-					<span class="tooltip">CSS</span>
-				</li>
-				<li>
-					<img src="assets/icons/html-5.svg" alt="HTML5" />
-					<span class="tooltip">HTML5</span>
-				</li>
-				<li>
-					<img src="assets/icons/ionic.svg" alt="Ionic" />
-					<span class="tooltip">Ionic</span>
-				</li>
-				<li>
-					<img src="assets/icons/js.svg" alt="JavaScript" />
-					<span class="tooltip">JavaScript</span>
-				</li>
-				<li><img src="assets/icons/next.svg" alt="Next.js" /><span class="tooltip">Next.js</span></li>
-				<li>
-					<img src="assets/icons/react.svg" alt="React" />
-					<span class="tooltip">React</span>
-				</li>
-				<li>
-					<img src="assets/icons/sass.svg" alt="Sass" />
-					<span class="tooltip">Sass</span>
-				</li>
-				<li>
-					<img src="assets/icons/typescript.svg" alt="TypeScript" />
-					<span class="tooltip">TypeScript</span>
-				</li>
-			</ul>
-		</article>
-
-		<article class="card">
-			<h3 class="no-text-select">Backend</h3>
-
-			<ul>
-				<li>
-					<img src="assets/icons/express.svg" alt="Express.js" />
-					<span class="tooltip">Express.js</span>
-				</li>
-				<li>
-					<img src="assets/icons/flask.svg" alt="Flask" />
-					<span class="tooltip">Flask</span>
-				</li>
-				<li>
-					<img src="assets/icons/java.svg" alt="Java" />
-					<span class="tooltip">Java</span>
-				</li>
-				<li>
-					<img src="assets/icons/node.svg" alt="Node.js" />
-					<span class="tooltip">Node.js</span>
-				</li>
-				<li>
-					<img src="assets/icons/php.svg" alt="PHP" />
-					<span class="tooltip">PHP</span>
-				</li>
-				<li>
-					<img src="assets/icons/python.svg" alt="Python" />
-					<span class="tooltip">Python</span>
-				</li>
-				<li>
-					<img src="assets/icons/spring.svg" alt="Spring Framework" />
-					<span class="tooltip">Spring</span>
-				</li>
-			</ul>
-		</article>
-
-		<article class="card">
-			<h3 class="no-text-select">Otras</h3>
-
-			<ul>
-				<li>
-					<img src="assets/icons/android.svg" alt="Android" />
-					<span class="tooltip">Android</span>
-				</li>
-				<li>
-					<img src="assets/icons/docker.svg" alt="Docker" />
-					<span class="tooltip">Docker</span>
-				</li>
-				<li>
-					<img src="assets/icons/figma.svg" alt="Figma" />
-					<span class="tooltip">Figma</span>
-				</li>
-				<li>
-					<img src="assets/icons/git.svg" alt="Git" />
-					<span class="tooltip">Git</span>
-				</li>
-				<li>
-					<img src="assets/icons/github-icon.svg" alt="GitHub" />
-					<span class="tooltip">GitHub</span>
-				</li>
-				<li>
-					<img src="assets/icons/linux-tux.svg" alt="Linux" />
-					<span class="tooltip">Linux</span>
-				</li>
-				<li>
-					<img src="assets/icons/mariadb.svg" alt="MariaDB" />
-					<span class="tooltip">MariaDB</span>
-				</li>
-				<li>
-					<img src="assets/icons/microsoft.svg" alt="Windows" />
-					<span class="tooltip">Windows</span>
-				</li>
-				<li>
-					<img src="assets/icons/mongo.svg" alt="MongoDB" />
-					<span class="tooltip">MongoDB</span>
-				</li>
-				<li>
-					<img src="assets/icons/mysql.svg" alt="MySQL" />
-					<span class="tooltip">MySQL</span>
-				</li>
-				<li>
-					<img src="assets/icons/prestashop.svg" alt="PrestaShop" />
-					<span class="tooltip">PrestaShop</span>
-				</li>
-				<li>
-					<img src="assets/icons/stripe.svg" alt="Stripe" />
-					<span class="tooltip">Stripe</span>
-				</li>
-				<li>
-					<img src="assets/icons/unity.svg" alt="Unity" />
-					<span class="tooltip">Unity</span>
-				</li>
-				<li>
-					<img src="assets/icons/vs-code.svg" alt="Visual Studio Code" />
-					<span class="tooltip">VSCode</span>
-				</li>
-				<li>
-					<img src="assets/icons/wordpress.svg" alt="Wordpress" />
-					<span class="tooltip">Wordpress</span>
-				</li>
-			</ul>
-		</article>
+				<ul>
+					{group.skills.map((skill) => (
+						<li>
+							<div class={`skill-icon ${skill.invert ? 'invert-icon' : ''}`}>
+								<img src={`assets/icons/${skill.icon}`} alt={skill.name} loading="lazy" />
+							</div>
+							<span class="skill-name">{skill.name}</span>
+						</li>
+					))}
+				</ul>
+			</article>
+		))}
 	</div>
 </section>

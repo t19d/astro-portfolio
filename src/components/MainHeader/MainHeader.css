@@ -1,12 +1,16 @@
 header.menu {
-	z-index: 1;
+	z-index: 10;
 	position: sticky;
 	top: 0;
-	background-color: var(--primary_color-dark-2);
-	transition: all 0.5s;
+	background: rgba(10, 10, 15, 0.8);
+	backdrop-filter: blur(20px);
+	-webkit-backdrop-filter: blur(20px);
+	border-bottom: 1px solid var(--border-subtle);
+	transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 
 	&.scrolled {
-		box-shadow: 0 1px 1px var(--text_color_white);
+		background: rgba(10, 10, 15, 0.95);
+		box-shadow: 0 1px 20px rgba(0, 0, 0, 0.3);
 	}
 
 	& > .max-width {
@@ -15,7 +19,7 @@ header.menu {
 		}
 
 		& > nav {
-			padding-block: var(--page-space);
+			padding-block: 16px;
 
 			@media (max-width: 1024px) {
 				padding-inline: var(--page-space);
@@ -34,27 +38,43 @@ header.menu {
 
 			& ul {
 				display: flex;
-				gap: 1rem;
+				gap: 2rem;
 				justify-content: center;
-				font-size: 1.25rem;
+				font-size: 0.9rem;
+				font-weight: 400;
+				letter-spacing: 0.5px;
+
+				& a {
+					color: var(--text-secondary);
+					transition: color 0.3s;
+
+					&:hover {
+						color: var(--accent-primary);
+					}
+				}
 			}
 		}
 
 		& .logo {
-			max-width: 150px;
-			transition: filter 0.3s;
+			transition: opacity 0.3s;
 
 			&::after {
 				content: none;
 			}
 
 			&:hover {
-				filter: drop-shadow(0 0 3px var(--text_color_white));
+				opacity: 0.8;
 			}
 
-			& img {
-				width: 100%;
-				object-fit: container;
+			& .logo-text {
+				font-size: 1.5rem;
+				font-weight: 800;
+				letter-spacing: -1px;
+				color: var(--text-primary);
+			}
+
+			& .logo-dot {
+				color: var(--accent-primary);
 			}
 		}
 
@@ -89,25 +109,26 @@ header.menu {
 				& .menu-toggle-label {
 					cursor: pointer;
 					position: relative;
-					width: 2rem;
-					height: 1.5rem;
+					width: 1.75rem;
+					height: 1.25rem;
 
 					& span {
 						position: absolute;
 						top: 0;
 						display: block;
-						height: 4px;
-						background-color: var(--text_color_white);
+						height: 2px;
+						background-color: var(--text-primary);
 						width: 100%;
 						transition: all 0.3s ease;
+						border-radius: 2px;
 
 						&:nth-child(2) {
-							top: calc(50% - 2px);
+							top: calc(50% - 1px);
 							opacity: 1;
 						}
 
 						&:nth-child(3) {
-							top: calc(100% - 4px);
+							top: calc(100% - 2px);
 						}
 					}
 				}
@@ -117,7 +138,7 @@ header.menu {
 				& .mobile,
 				& .map {
 					transition: background-color 0.3s;
-					background-color: var(--primary_color-dark-2);
+					background: rgba(10, 10, 15, 0.98);
 				}
 
 				& .map {
@@ -127,12 +148,15 @@ header.menu {
 
 			& .map {
 				position: absolute;
-				top: 95%;
+				top: 100%;
+				left: 0;
+				right: 0;
 				display: none;
 				flex-direction: column;
 				justify-content: center;
-				gap: 2.5dvh;
-				box-shadow: 0 1px 1px var(--text_color_white);
+				gap: 2rem;
+				padding: 2rem var(--page-space);
+				border-bottom: 1px solid var(--border-subtle);
 
 				& .logo {
 					display: none;
@@ -141,7 +165,7 @@ header.menu {
 				& ul {
 					flex-direction: column;
 					align-items: center;
-					gap: 2.5dvh;
+					gap: 1.5rem;
 				}
 			}
 		}

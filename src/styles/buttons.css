@@ -1,26 +1,48 @@
 .btn {
-	background-color: var(--primary_color-light-2_30);
-	color: var(--text_color_white);
+	background: var(--glass-bg);
+	color: var(--text-primary);
 	line-height: 1rem;
-	border: 1px solid var(--primary_color-light-2);
+	border: 1px solid var(--glass-border);
 	border-radius: 5rem;
-	padding: 1rem 1.5rem;
-	transition: all 0.3s;
+	padding: 0.85rem 1.5rem;
+	backdrop-filter: blur(var(--glass-blur));
+	-webkit-backdrop-filter: blur(var(--glass-blur));
+	transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+	font-weight: 500;
+	letter-spacing: 0.5px;
 
 	&:hover {
-		background-color: var(--primary_color);
-		box-shadow: 0 0 2px var(--text_color_white);
+		background: rgba(0, 212, 255, 0.1);
+		border-color: var(--border-hover);
+		box-shadow: var(--glow-accent);
+		transform: translateY(-2px);
 	}
 
 	&.all-round {
-		padding: 1rem;
+		padding: 0.85rem;
 	}
 }
 
 .btn.download-cv::after {
 	display: inline-block;
-	content: url("../assets/icons/download.svg");
+	content: url("/assets/icons/download.svg");
 	width: 1rem;
 	aspect-ratio: 1/1;
 	margin-left: 0.75rem;
+	filter: brightness(0) invert(1);
+}
+
+.btn-accent {
+	background: var(--accent-gradient);
+	color: var(--bg-primary);
+	border: none;
+	font-weight: 600;
+	padding: 0.85rem 2rem;
+	border-radius: 5rem;
+	transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+
+	&:hover {
+		box-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
+		transform: translateY(-2px);
+	}
 }

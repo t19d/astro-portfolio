@@ -1,4 +1,1 @@
-@font-face {
-	font-family: "NotoSans";
-	src: url("/assets/fonts/NotoSans-VariableFont.ttf") format("truetype");
-}
+/* Inter font loaded via Google Fonts in MainLayout.astro <head> */

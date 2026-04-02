@@ -3,49 +3,72 @@ import "./ContactSection.css";
 ---
 
 <section id="contact">
-	<header>
+	<header class="reveal">
+		<span class="section-tag">Conectemos</span>
 		<h2 class="title-section">Contacto</h2>
 	</header>
 
-	<article class="card">
-		<p>
-			¡En resumen, estoy en un viaje 🧳 <span class="yellow">constante de mejora</span> personal y profesional! Cada día, trabajo para ser más
-			<span class="underline">eficiente</span> 🤖, <span class="underline">colaborativo</span> 🤝 y
-			<span class="underline">adaptable</span> en mi enfoque laboral 🧑‍💼. Estoy emocionado por las oportunidades de crecimiento 🪴 que me esperan y estoy comprometido
-			a seguir <span class="yellow">evolucionando</span> como profesional 💡.
-		</p>
-		<p>
-			Si deseas ponerte en <span class="yellow">contacto conmigo</span>, no dudes en <span class="underline">enviarme un mensaje</span>. Estoy <span
-				class="yellow">disponible</span
-			> para <span class="underline">colaboraciones</span>,
-			<span class="underline">consultas</span> o simplemente para <span class="underline">charlar</span> sobre proyectos interesantes.
-		</p>
-		<p><span class="yellow">¡Hablemos!</span> 🚀📩</p>
-	</article>
+	<div class="contact-content reveal reveal-delay-1">
+		<div class="contact-card glass-card">
+			<p class="contact-intro">
+				¿Tienes un proyecto en mente o simplemente quieres conectar? Estoy
+				<span class="accent">abierto a nuevas oportunidades</span> de colaboración, consultoría o simplemente a una buena conversación sobre tecnología.
+			</p>
 
-	<article class="links">
-		<ul>
+			<a href="mailto:proyectostoyedev@gmail.com" class="cta-button" aria-label="Enviar un email">
+				<span>Envíame un mensaje</span>
+				<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+					<path d="M5 12h14" />
+					<path d="m12 5 7 7-7 7" />
+				</svg>
+			</a>
+		</div>
+
+		<ul class="social-links reveal reveal-delay-2">
 			<li>
 				<a
-					href="https://www.linkedin.com/in/david-tojo-yebra-581533176/"
+					href="https://www.linkedin.com/in/david-tojo-yebra/"
 					target="_blank"
 					rel="noopener"
 					title="Perfil de LinkedIn de David Tojo"
-					class="btn all-round"
+					class="social-link"
+					aria-label="LinkedIn"
 				>
-					<img src="assets/icons/linkedin.svg" alt="LinkedIn" />
+					<img src="assets/icons/linkedin.svg" alt="" aria-hidden="true" />
+					<span>LinkedIn</span>
 				</a>
 			</li>
 			<li>
-				<a href="https://github.com/t19d" target="_blank" rel="noopener" title="Perfil de GitHub de David Tojo" class="btn all-round">
-					<img src="assets/icons/github.svg" alt="GitHub" />
+				<a
+					href="https://github.com/t19d"
+					target="_blank"
+					rel="noopener"
+					title="Perfil de GitHub de David Tojo"
+					class="social-link"
+					aria-label="GitHub"
+				>
+					<img src="assets/icons/github.svg" alt="" aria-hidden="true" />
+					<span>GitHub</span>
 				</a>
 			</li>
 			<li>
-				<a href="mailto:proyectostoyedev@gmail.com" title="Enviar correo electrónico a David Tojo" class="btn all-round">
-					<img src="assets/icons/email.svg" alt="Correo electrónico" />
+				<a
+					href="mailto:proyectostoyedev@gmail.com"
+					title="Enviar correo electrónico a David Tojo"
+					class="social-link"
+					aria-label="Email"
+				>
+					<img src="assets/icons/email.svg" alt="" aria-hidden="true" />
+					<span>Email</span>
 				</a>
 			</li>
 		</ul>
-	</article>
+	</div>
 </section>
+
+<footer class="site-footer">
+	<div class="max-width">
+		<p>Diseñado y desarrollado por <span class="accent">David Tojo</span></p>
+		<p class="footer-year">© 2025</p>
+	</div>
+</footer>
