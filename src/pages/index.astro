@@ -10,8 +10,20 @@ import ContactSection from "@components/sections/ContactSection/ContactSection.a
 ---
 
 <style>
+	.dot-grid-bg {
+		position: fixed;
+		inset: 0;
+		z-index: 0;
+		pointer-events: none;
+		background-image: radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+		background-size: 28px 28px;
+		width: 100vw;
+		height: 100vh;
+	}
+
 	main {
 		position: relative;
+		z-index: 1;
 
 		& .max-width {
 			display: flex;
@@ -27,6 +39,7 @@ import ContactSection from "@components/sections/ContactSection/ContactSection.a
 </style>
 
 <MainLayout>
+	<div class="dot-grid-bg" aria-hidden="true"></div>
 	<MainHeader />
 
 	<main>

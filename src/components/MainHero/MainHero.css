@@ -40,12 +40,6 @@
 			}
 		}
 
-		& .dot-grid {
-			position: absolute;
-			inset: 0;
-			background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-			background-size: 30px 30px;
-		}
 	}
 
 	/* ===== CONTENT ===== */
