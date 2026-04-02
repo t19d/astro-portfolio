@@ -21,13 +21,14 @@
 }
 
 /* ===== GLOW PULSE ===== */
+/* Composited: animates opacity of a pseudo-element, not box-shadow directly */
 @keyframes glowPulse {
 	0%,
 	100% {
-		box-shadow: 0 0 20px rgba(0, 212, 255, 0.1);
+		opacity: 0.15;
 	}
 	50% {
-		box-shadow: 0 0 35px rgba(0, 212, 255, 0.25);
+		opacity: 1;
 	}
 }
 

@@ -32,12 +32,21 @@
 		animation: fadeInUp 0.8s ease-out;
 
 		& .status-dot {
+			position: relative;
 			width: 8px;
 			height: 8px;
 			background: var(--accent-primary);
 			border-radius: 50%;
-			animation: glowPulse 2s ease-in-out infinite;
 			box-shadow: 0 0 6px rgba(var(--accent-primary-rgb), 0.5);
+
+			&::after {
+				content: '';
+				position: absolute;
+				inset: -5px;
+				border-radius: 50%;
+				box-shadow: 0 0 14px 4px rgba(var(--accent-primary-rgb), 0.7);
+				animation: glowPulse 2s ease-in-out infinite;
+			}
 		}
 	}
 

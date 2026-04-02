@@ -1,10 +1,19 @@
 ---
+import { Image } from "astro:assets";
+import logoTecalis from "@assets/img/companies/tecalis.jpeg";
+import logoTheWhiteam from "@assets/img/companies/thewhiteam.jpeg";
+import logoCargoffer from "@assets/img/companies/cargoffer.jpeg";
+import logoMinsait from "@assets/img/companies/minsait.jpeg";
+import logoDominioZero from "@assets/img/companies/dominiozero.jpeg";
+import logoMasLenovo from "@assets/img/companies/maslenovo.jpeg";
+import logoNortempo from "@assets/img/companies/nortempo.jpeg";
+import logoFuturoDigitale from "@assets/img/companies/futuro_digitale.jpeg";
 import "./ExperienceSection.css";
 
 const experiences = [
 	{
 		company: "Tecalis",
-		logo: "assets/img/companies/tecalis.jpeg",
+		logo: logoTecalis,
 		role: "Developer",
 		period: "2025 — Actualidad",
 		description:
@@ -22,7 +31,7 @@ const experiences = [
 	},
 	{
 		company: "The Whiteam",
-		logo: "assets/img/companies/thewhiteam.jpeg",
+		logo: logoTheWhiteam,
 		role: "Frontend Developer",
 		period: "2024 — 2025",
 		description: "Consultoría frontend para proyectos de clientes empresariales.",
@@ -37,7 +46,7 @@ const experiences = [
 	},
 	{
 		company: "Cargoffer",
-		logo: "assets/img/companies/cargoffer.jpeg",
+		logo: logoCargoffer,
 		role: "FullStack Developer",
 		period: "2023 — 2024",
 		description: "Plataforma con stack variado y producto propio.",
@@ -56,7 +65,7 @@ const experiences = [
 	},
 	{
 		company: "Minsait",
-		logo: "assets/img/companies/minsait.jpeg",
+		logo: logoMinsait,
 		role: "Técnico de Software",
 		period: "2021 — 2022",
 		description: "Desarrollo en proyectos de gran escala para clientes del sector público y privado.",
@@ -73,7 +82,7 @@ const experiences = [
 	},
 	{
 		company: "DominioZero",
-		logo: "assets/img/companies/dominiozero.jpeg",
+		logo: logoDominioZero,
 		role: "Prácticas de Desarrollo Web",
 		period: "2021",
 		description: "Desarrollo web y e-commerce con tecnologías CMS.",
@@ -86,7 +95,7 @@ const experiences = [
 	},
 	{
 		company: "MasLenovo",
-		logo: "assets/img/companies/maslenovo.jpeg",
+		logo: logoMasLenovo,
 		role: "Sistemas y reparación de hardware",
 		period: "2020",
 		description: "Soporte técnico, hardware y mantenimiento de sistemas.",
@@ -100,7 +109,7 @@ const experiences = [
 	},
 	{
 		company: "Nortempo",
-		logo: "assets/img/companies/nortempo.jpeg",
+		logo: logoNortempo,
 		role: "Becario de Sistemas",
 		period: "2019",
 		description: "Administración de sistemas e infraestructura de red.",
@@ -116,7 +125,7 @@ const experiences = [
 	},
 	{
 		company: "Futuro Digitale",
-		logo: "assets/img/companies/futuro_digitale.jpeg",
+		logo: logoFuturoDigitale,
 		role: "Prácticas Internacionales (Erasmus)",
 		period: "2019",
 		description: "Estancia en Italia dentro del programa Erasmus+.",
@@ -147,7 +156,7 @@ const experiences = [
 
 					<div class="timeline-card glass-card">
 						<div class="card-header">
-							<img src={exp.logo} alt={`Logo de ${exp.company}`} class="company-logo" width="52" height="52" loading="lazy" />
+							<Image src={exp.logo} alt={`Logo de ${exp.company}`} class="company-logo" width={52} height={52} loading="lazy" />
 							<div class="card-title">
 								<h3>{exp.role}</h3>
 								<div class="card-meta">
