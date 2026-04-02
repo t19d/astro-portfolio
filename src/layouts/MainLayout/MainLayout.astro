@@ -8,22 +8,22 @@ const { title = "David Tojo — Desarrollador Full Stack", baseUrl = "https://po
 const description = "Portfolio de David Tojo Yebra. Desarrollador Full Stack con experiencia en Angular, React, Node.js y más. Apasionado por crear experiencias web modernas y eficientes.";
 ---
 
-<style is:global>
-	@import "@styles/buttons.css";
-	@import "@styles/colors.css";
-	@import "@styles/fonts.css";
-	@import "@styles/links.css";
-	@import "@styles/resets.css";
-	@import "@styles/animations.css";
-
-	@import "./MainLayout.css";
-</style>
-
 <html lang="es">
 	<head>
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<style is:global>
+			@import "@styles/buttons.css";
+			@import "@styles/colors.css";
+			@import "@styles/fonts.css";
+			@import "@styles/links.css";
+			@import "@styles/resets.css";
+			@import "@styles/animations.css";
+
+			@import "./MainLayout.css";
+		</style>
 		<meta name="description" content={description} />
 		<meta name="author" content="David Tojo Yebra" />
 		<meta name="theme-color" content="#0a0a0f" />
@@ -31,10 +31,16 @@ const description = "Portfolio de David Tojo Yebra. Desarrollador Full Stack con
 		<!-- Preconnect Google Fonts -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" />
 		<link
-			href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
 			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+			media="print"
+			onload="this.media='all'"
 		/>
+		<noscript>
+			<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" />
+		</noscript>
 
 		<!-- Facebook / Open Graph -->
 		<meta property="og:url" content={baseUrl} />
