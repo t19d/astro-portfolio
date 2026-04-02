@@ -69,25 +69,20 @@
 /* ===== SCROLL REVEAL ===== */
 .reveal {
 	opacity: 0;
-	transform: translateY(30px);
-	transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
-		transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+	transform: translateY(30px); /* Oculto desplazado hacia abajo */
+	/* Transición de SALIDA (scroll hacia arriba): Desaparece deslizando de arriba a abajo rápidamente, sin retrasos */
+	transition: opacity 0.3s ease-out, transform 0.3s ease-out;
 }
 
 .reveal.visible {
 	opacity: 1;
-	transform: translateY(0);
+	transform: translateY(0); /* Posición final */
+	/* Transición de ENTRADA (scroll hacia abajo): Aparece deslizando de abajo a arriba de forma suave */
+	transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.reveal-delay-1 {
-	transition-delay: 0.1s;
-}
-.reveal-delay-2 {
-	transition-delay: 0.2s;
-}
-.reveal-delay-3 {
-	transition-delay: 0.3s;
-}
-.reveal-delay-4 {
-	transition-delay: 0.4s;
-}
+/* Solo añadimos delay en la entrada, para que de salida sea inmediato */
+.reveal-delay-1.visible { transition-delay: 0.05s; }
+.reveal-delay-2.visible { transition-delay: 0.10s; }
+.reveal-delay-3.visible { transition-delay: 0.15s; }
+.reveal-delay-4.visible { transition-delay: 0.20s; }
