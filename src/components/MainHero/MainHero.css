@@ -6,41 +6,6 @@
 	justify-content: center;
 	min-height: calc(100dvh - 60px);
 	padding: 4rem 0 2rem;
-	overflow: hidden;
-
-	/* ===== BACKGROUND ===== */
-	& .hero-bg {
-		position: absolute;
-		inset: 0;
-		z-index: -1;
-		overflow: hidden;
-
-		& .gradient-orb {
-			position: absolute;
-			border-radius: 50%;
-			filter: blur(80px);
-			opacity: 0.4;
-
-			&.orb-1 {
-				width: 500px;
-				height: 500px;
-				background: radial-gradient(circle, rgba(0, 212, 255, 0.3), transparent 70%);
-				top: -10%;
-				right: -5%;
-				animation: float 8s ease-in-out infinite;
-			}
-
-			&.orb-2 {
-				width: 400px;
-				height: 400px;
-				background: radial-gradient(circle, rgba(123, 104, 238, 0.25), transparent 70%);
-				bottom: -10%;
-				left: -5%;
-				animation: float 10s ease-in-out infinite reverse;
-			}
-		}
-
-	}
 
 	/* ===== CONTENT ===== */
 	& .hero-content {
@@ -69,10 +34,10 @@
 		& .status-dot {
 			width: 8px;
 			height: 8px;
-			background: #00e676;
+			background: var(--accent-primary);
 			border-radius: 50%;
 			animation: glowPulse 2s ease-in-out infinite;
-			box-shadow: 0 0 6px rgba(0, 230, 118, 0.5);
+			box-shadow: 0 0 6px rgba(var(--accent-primary-rgb), 0.5);
 		}
 	}
 
@@ -106,6 +71,7 @@
 			line-height: 1.7;
 			color: var(--text-secondary);
 			animation: fadeInUp 0.8s ease-out 0.6s backwards;
+			padding-inline: 1rem;
 		}
 	}
 
@@ -120,6 +86,11 @@
 
 			&:hover {
 				transform: translateY(-3px);
+			}
+
+			&:focus-visible {
+				outline: 2px solid var(--accent-primary);
+				outline-offset: 3px;
 			}
 		}
 

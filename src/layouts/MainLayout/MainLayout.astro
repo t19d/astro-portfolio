@@ -4,7 +4,7 @@ interface Props {
 	baseUrl?: string;
 }
 
-const { title = "David Tojo — Desarrollador Full Stack", baseUrl = "https://davidtojo.dev" } = Astro.props;
+const { title = "David Tojo — Desarrollador Full Stack", baseUrl = "https://portfolio.dty.es" } = Astro.props;
 const description = "Portfolio de David Tojo Yebra. Desarrollador Full Stack con experiencia en Angular, React, Node.js y más. Apasionado por crear experiencias web modernas y eficientes.";
 ---
 
@@ -56,6 +56,7 @@ const description = "Portfolio de David Tojo Yebra. Desarrollador Full Stack con
 		<link rel="icon" type="image/png" href={`${baseUrl}/assets/img/me.png`} sizes="64x64" />
 	</head>
 	<body>
+		<a href="#main-content" class="skip-to-content">Ir al contenido principal</a>
 		<slot />
 	</body>
 </html>
