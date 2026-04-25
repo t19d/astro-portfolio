@@ -23,15 +23,6 @@
 	}
 }
 
-.btn.download-cv::after {
-	display: inline-block;
-	content: url("/assets/icons/download.svg");
-	width: 1rem;
-	aspect-ratio: 1/1;
-	margin-left: 0.75rem;
-	filter: brightness(0) invert(1);
-}
-
 .btn-accent {
 	background: var(--accent-gradient);
 	color: var(--bg-primary);
